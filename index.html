@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phytons | Simple snake game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imgs/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <div class="instructions" id="instructions">
+            <header>
+                <span><img src="imgs/logo.png" alt="logo" class="img-logo"></span>
+                <h1 class="logo">PHYTONS</h1>
+            </header>
+            <div class="card">
+                <div class="card-header">
+                    <h2>Instructions</h2>
+                </div>
+                <div class="card-body">
+                    <ol>
+                        <li>Read the instructions</li>
+                        <li>Input your name</li>
+                        <li>Click play button below.</li>
+                    </ol>
+
+                    <h3>If you wanna rewind :</h3>
+                    <ol>
+                        <li>Click Rewind button</li>
+                        <li>Input how many second you wanna rewind in</li>
+                        <li>Click Rewind button to rewind the game</li>
+                        <li>Click Cancel button to cancel.</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="input-area">
+                <input type="text" id="player-name" placeholder="What's your name?" required autofocus>
+                <button type="button" id="play-btn" disabled>Play</button>
+            </div>
+        </div>
+
+        <div class="game-board" id="game-board">
+            <div class="game-board-header">
+                <div class="scoreContainer">SCORE:
+                    <span id="score">6</span>
+                </div>
+                <div class="logo">
+                    <span><img src="imgs/logo.png" alt="logo" class="img-logo" style="width: 40px;"></span>
+                    PHYTONS
+                </div>
+                <div id="timer">00:00:00</div>
+            </div>
+
+            <canvas width="960" height="600px" id="canvas"></canvas>
+
+            <div class="rewindArea">
+                <input type="range" id="rewind-range" value="5" min="0" max="5" step="1">
+                <button id="cancel-btn">Cancel</button>
+                <button id="rewind-btn">Rewind</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
