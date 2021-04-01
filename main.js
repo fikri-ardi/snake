@@ -8,6 +8,10 @@ let cancelBtn = document.getElementById('cancel-btn');
 let canvas = document.getElementById('canvas');
 let score = document.getElementById('score');
 let timer = document.getElementById('timer');
+
+let chewSound = document.getElementById('chew-sound');
+let gameOverSound = document.getElementById('game-over-sound');
+
 let ctx = canvas.getContext('2d');
 
 let blockQuantity = {
@@ -191,7 +195,10 @@ function update(time) {
         if (food.x == newHead.x && food.y == newHead.y) foodEatenIndex = index
     })
 
-    foodEatenIndex !== null ? foods.splice(foodEatenIndex, 1) : snakes.pop()
+    if (foodEatenIndex !== null) {
+        foods.splice(foodEatenIndex, 1)
+        chewSound.play()
+    }else snakes.pop()
 
     if (newHead.x < 0 || newHead.y < 0 || newHead.x >= blockQuantity.x || newHead.y >= blockQuantity.y) gameOver()
 
@@ -211,6 +218,7 @@ function update(time) {
 }
 
 function gameOver() {
+    gameOverSound.play()
     gameStatus = 'end';
     let highScore = localStorage.getItem('highScore') ?? 0;
     if (snakes.length > highScore) {
