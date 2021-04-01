@@ -46,7 +46,7 @@ rewindBtn.addEventListener('click', rewind)
 
 rewindRange.addEventListener('input', event => {
     let inputRangeValue = event.target.value
-    snakes = snakePositions[inputRangeValue] ? ? snakes;
+    snakes = snakePositions[inputRangeValue] ?? snakes;
 })
 
 cancelBtn.addEventListener('click', () => {
@@ -212,7 +212,7 @@ function update(time) {
 
 function gameOver() {
     gameStatus = 'end';
-    let highScore = localStorage.getItem('highScore') ? ? 0;
+    let highScore = localStorage.getItem('highScore') ?? 0;
     if (snakes.length > highScore) {
         localStorage.setItem('highScore', snakes.length)
     }
