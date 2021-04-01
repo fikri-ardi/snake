@@ -1,15 +1,15 @@
 /* initial */
-:root{
+:root {
     --backCol: rgb(19, 40, 65);
     --fontDefault: rgb(235, 235, 243);
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     background-color: var(--backCol);
     color: var(--fontDefault);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -18,55 +18,55 @@ body{
 /* container */
 
 /* logo */
-.img-logo{
+.img-logo {
     width: 70px;
 }
 
-h1.logo{
+h1.logo {
     text-align: center;
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 3rem;
 }
 
-.container{
+.container {
     display: flex;
     height: 100vh;
 }
 
 /* instructions */
-.instructions{
+.instructions {
     margin: auto;
 }
 
-.instructions header{
+.instructions header {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.card{
+.card {
     background-color: #ffffff20;
     border-radius: 4px;
 }
 
-.card-header{
+.card-header {
     background-color: #00000020;
     padding: 10px 30px;
 }
 
-.card-body{
+.card-body {
     line-height: 1.6;
     padding: 20px 50px;
 }
 
-.card-body h3{
+.card-body h3 {
     margin: 10px 0;
 }
 
 /* input area */
-.input-area{
+.input-area {
     width: 100%;
     display: grid;
     grid-template-columns: 4fr 1fr;
@@ -74,7 +74,7 @@ h1.logo{
     gap: 5px;
 }
 
-.input-area input{
+.input-area input {
     padding: 10px 15px;
     border: none;
     outline: none;
@@ -84,7 +84,7 @@ h1.logo{
     font-size: 1.5rem;
 }
 
-.input-area button{
+.input-area button {
     border: none;
     outline: none;
     background: #5286be;
@@ -95,26 +95,26 @@ h1.logo{
     transition: .2s ease-out;
 }
 
-.input-area button:hover{
+.input-area button:hover {
     background-color: #5d96d4;
 }
 
-.input-area button:active{
+.input-area button:active {
     background-color: #0069d9;
 }
 
-.input-area button:disabled{
+.input-area button:disabled {
     opacity: .1;
     cursor: not-allowed;
 }
 
 /* game-board */
-.game-board{
+.game-board {
     margin: auto;
     display: none;
 }
 
-.game-board-header{
+.game-board-header {
     display: flex;
     justify-content: space-between;
     align-items: end;
@@ -122,24 +122,24 @@ h1.logo{
     font-weight: 600;
 }
 
-.game-board .logo{
+.game-board .logo {
     font-size: 2rem;
 }
 
-#canvas{
+#canvas {
     background-color: #ffffff20;
     border-radius: 4px;
     overflow: hidden;
 }
 
 /* rewind area */
-.rewindArea{
+.rewindArea {
     display: flex;
     justify-content: center;
     position: relative;
 }
 
-.rewindArea button{
+.rewindArea button {
     padding: 10px 15px;
     border: none;
     outline: none;
@@ -151,7 +151,7 @@ h1.logo{
     cursor: pointer;
 }
 
-#rewind-range{
+#rewind-range {
     display: block;
     position: absolute;
     top: -40px;
@@ -161,17 +161,17 @@ h1.logo{
     opacity: 0;
 }
 
-#rewind-range.active{
+#rewind-range.active {
     visibility: visible;
     opacity: 1;
 }
 
-#cancel-btn{
+#cancel-btn {
     visibility: hidden;
     opacity: 1;
 }
 
-#cancel-btn.active{
+#cancel-btn.active {
     visibility: visible;
     opacity: 1;
 }
