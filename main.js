@@ -41,6 +41,7 @@ playBtn.addEventListener('click', () => {
         gameBoard.style.display = 'block';
         init()
         start()
+        controll()
     }
 })
 
@@ -60,27 +61,31 @@ cancelBtn.addEventListener('click', () => {
     snakes = snakeTmp
 })
 
-window.onkeyup = event => {
-    if ((event.key === 'ArrowUp' || event.key === 'w') && snakeDirection !== 'down') {
-        snakeDx = 0
-        snakeDy = -1
-        snakeDirection = 'up'
-        update(timestamp)
-    } else if ((event.key === 'ArrowDown' || event.key === 's') && snakeDirection !== 'up') {
-        snakeDx = 0
-        snakeDy = 1
-        snakeDirection = 'down'
-        update(timestamp)
-    } else if ((event.key === 'ArrowLeft' || event.key === 'a') && snakeDirection !== 'right') {
-        snakeDx = -1
-        snakeDy = 0
-        snakeDirection = 'left'
-        update(timestamp)
-    } else if ((event.key === 'ArrowRight' || event.key === 'd') && snakeDirection !== 'left') {
-        snakeDx = 1
-        snakeDy = 0
-        snakeDirection = 'right'
-        update(timestamp)
+function controll(){
+    window.onkeyup = event => {
+        if (gameStatus === 'playing') {
+            if ((event.key === 'ArrowUp' || event.key === 'w') && snakeDirection !== 'down') {
+                snakeDx = 0
+                snakeDy = -1
+                snakeDirection = 'up'
+                update(timestamp)
+            } else if ((event.key === 'ArrowDown' || event.key === 's') && snakeDirection !== 'up') {
+                snakeDx = 0
+                snakeDy = 1
+                snakeDirection = 'down'
+                update(timestamp)
+            } else if ((event.key === 'ArrowLeft' || event.key === 'a') && snakeDirection !== 'right') {
+                snakeDx = -1
+                snakeDy = 0
+                snakeDirection = 'left'
+                update(timestamp)
+            } else if ((event.key === 'ArrowRight' || event.key === 'd') && snakeDirection !== 'left') {
+                snakeDx = 1
+                snakeDy = 0
+                snakeDirection = 'right'
+                update(timestamp)
+            }
+        }
     }
 }
 
@@ -108,7 +113,9 @@ function init() {
     for (let i = 0; i < 3; i++) generateFood()
 
     setInterval(() => {
-        if (foods.length < 5) generateFood()
+        if (gameStatus == 'playing') {
+            if (foods.length < 5) generateFood()
+        }
     }, 3000)
 
     setInterval(() => {
