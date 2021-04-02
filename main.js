@@ -89,7 +89,7 @@ function rewind() {
         gameStatus = 'paused'
         rewindRange.classList.add('active');
         cancelBtn.classList.add('active');
-        rewindRange.value = 5;
+        rewindRange.value = 10;
     } else if (gameStatus == 'paused') {
         gameStatus = 'playing'
         snakeTmp = snakes;
@@ -115,12 +115,11 @@ function init() {
         if (gameStatus == 'playing') {
             saveSnake()
         }
-    }, 1000)
-
+    }, 250)
 }
 
 function saveSnake() {
-    if (snakePositions.length > 5) snakePositions.shift()
+    if (snakePositions.length > 11) snakePositions.shift()
     let newSnake = snakes.slice();
     snakePositions.push(newSnake)
 }
@@ -208,6 +207,7 @@ function update(time) {
         }
     })
 
+    snakeTmp = snakes
     score.innerText = snakes.length;
 
     let second = Math.floor(time / 1000) % 60;
