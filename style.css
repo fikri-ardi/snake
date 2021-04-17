@@ -95,8 +95,10 @@ h1.logo {
     transition: .2s ease-out;
 }
 
-.input-area button:hover {
-    background-color: #5d96d4;
+.input-area button:hover,
+.input-area button:focus {
+    background-color: #75abe4;
+    border: 2px solid #5d96d420;
 }
 
 .input-area button:active {
@@ -174,4 +176,33 @@ h1.logo {
 #cancel-btn.active {
     visibility: visible;
     opacity: 1;
+}
+
+/* Alert */
+#alert{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-100%);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s ease-out;
+    background-color: #fff;
+    padding: 50px;
+    color: var(--backCol);
+    border-radius: 4px;
+    box-shadow: 0 15px 40px -10px #00000060;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#alert.active{
+    transform: translate(-50%,-50%);
+    visibility: visible;
+    opacity: 1;
+}
+
+.alert-header{
+    font-size: 2.3rem;
 }

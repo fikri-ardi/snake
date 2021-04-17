@@ -8,6 +8,7 @@ let cancelBtn = document.getElementById('cancel-btn');
 let canvas = document.getElementById('canvas');
 let score = document.getElementById('score');
 let timer = document.getElementById('timer');
+let GameAlert = document.getElementById('alert');
 
 let chewSound = document.getElementById('chew-sound');
 let gameOverSound = document.getElementById('game-over-sound');
@@ -232,5 +233,5 @@ function gameOver() {
         localStorage.setItem('highScore', snakes.length)
     }
     highScore = localStorage.getItem('highScore');
-    alert(`Your high score is ${highScore}`)
+    GameAlert.classList.add('active');
 }
